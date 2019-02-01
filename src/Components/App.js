@@ -2,15 +2,15 @@ import React, {Component, Fragment} from 'react';
 import Consumer from './Consumer'
 
 
-const MyContext = React.createContext()
+export const MyContext = React.createContext()
 
-function Context() {
-  return (
-  <MyContext.Provider value='😎'> 
-    <Consumer />
-  </MyContext.Provider>
-  )
-}
+// function Context() {
+//   return (
+//   <MyContext.Provider value='😎'> 
+//     <Consumer />
+//   </MyContext.Provider>
+//   )
+// }
 
 class App extends Component {
   state = {
@@ -20,8 +20,10 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <MyContext.Provider value='😎'> 
+        <Consumer />
+      </MyContext.Provider>
       <div>{this.state.fruit.map(f => `${f} `)}</div>
-      <Consumer />
       </Fragment>
     )
   }
